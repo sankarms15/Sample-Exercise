@@ -38,7 +38,7 @@ function progress_bar(container){
 				}else{
 					displayPrecentVal = percents;
 				}
-				bar.style.width	= Math.abs(percents) + '%';
+				bar.style.width	= parseInt(Math.abs(percents))+ '%';
 				
 			}else{
 				displayPrecentVal = percentage;

@@ -10,12 +10,18 @@
   <div id="qunit-fixture"></div>
   <script src="lib/qunit-1.19.0.js"></script>
   <script src="../js/Component/progBarComp.js"></script>
+  <script src="lib/jquery.min.js"></script>
   <script>
+		
 		QUnit.test( "test_ProgressBar1", function( assert ) {
+			
 			var bar1 = new progress_bar(document.getElementById('progress_bar1'));
+			
+			$("#btnPlus25").trigger("click");
+			
 			bar1.set_percentage(25);
 			assert.ok(bar1.bar.className, 'prg-blue-color', 'The element should apply Blue Color');
-			assert.ok(bar1.text.innerHTML, '25%', 'The element should apply Blue Color');
+			assert.ok(bar1.text.innerHTML, '50%', 'The element should apply Blue Color');
 
 			bar1.set_percentage(50);
 			assert.ok(bar1.bar.className, 'prg-blue-color', 'The element should apply Blue Color');
@@ -24,11 +30,39 @@
 			bar1.set_percentage(125);
 			assert.ok(bar1.bar.className, 'prg-red-color', 'The element should apply Red Color');
 			assert.ok(bar1.text.innerHTML, '125%', 'The element should apply Red Color');
+			
 		});
+		
+		QUnit.test( "button Test", function( assert ) {
+			
+			var bar1 = new progress_bar(document.getElementById('progress_bar1'));
+			
+			$("#btnMinus10").trigger("click");
+			
+			assert.ok(bar1.text.innerHTML, '15%', 'The element should apply Blue Color');
+			
+			$("#btnMinus25").trigger("click");
+			
+			assert.ok(bar1.text.innerHTML, '0%', 'The element should apply Blue Color');
+
+			$("#btnPlus10").trigger("click");
+			assert.ok(bar1.text.innerHTML, '35%', 'The element should apply Blue Color');
+
+			$("#btnPlus25").trigger("click");
+			assert.ok(bar1.text.innerHTML, '50%', 'The element should apply Red Color');
+			
+		});
+		
+		
   </script>
  
  <div id="qunit"></div>
-  <div id="qunit-fixture"><div id="progress_bar1"></div></div>
+  <div id="qunit-fixture"><div id="progress_bar1"></div>
+	 <button id='btnMinus10' hidden='hidden'/>
+	 <button id='btnMinus25' hidden='hidden'/>
+	 <button id='btnPlus10' hidden='hidden'/>
+	 <button id='btnPlus25' hidden='hidden'/>
+  </div>
   
 </body>
 </html>

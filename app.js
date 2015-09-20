@@ -20,10 +20,10 @@ var Options = [
   { name: 'Progress Bar 3', idx:'prgBr3'}];
  
 var buttonData = [
-  { text: '-10'},
-  { text: '-25'},
-  { text: '+10'},
-  { text: '+25'}];
+  { text: '-10', id:'btnMinus10'},
+  { text: '-25', id:'btnMinus25'},
+  { text: '+10', id:'btnPlus10'},
+  { text: '+25', id:'btnPlus25'}];
 
 // Load our dependencies and start
 require([ 'prgBar', 'ractive', 'rv!js/templates/main' ], function (prgBar, Ractive, mainTemplate ) {
