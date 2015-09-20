@@ -11,10 +11,19 @@
   <script src="lib/qunit-1.19.0.js"></script>
   <script src="../js/Component/progBarComp.js"></script>
   <script>
-		
-		test("progress bar done", function() {
+		QUnit.test( "test_ProgressBar1", function( assert ) {
 			var bar1 = new progress_bar(document.getElementById('progress_bar1'));
-			ok(bar1, bar1.ClassName, 'prg-blue-color');
+			bar1.set_percentage(25);
+			assert.ok(bar1.bar.className, 'prg-blue-color', 'The element should apply Blue Color');
+			assert.ok(bar1.text.innerHTML, '25%', 'The element should apply Blue Color');
+
+			bar1.set_percentage(50);
+			assert.ok(bar1.bar.className, 'prg-blue-color', 'The element should apply Blue Color');
+			assert.ok(bar1.text.innerHTML, '50%', 'The element should apply Blue Color');
+
+			bar1.set_percentage(125);
+			assert.ok(bar1.bar.className, 'prg-red-color', 'The element should apply Red Color');
+			assert.ok(bar1.text.innerHTML, '125%', 'The element should apply Red Color');
 		});
   </script>
  
