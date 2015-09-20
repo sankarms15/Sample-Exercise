@@ -1,0 +1,21 @@
+<div class='wrapper'>
+	<div id="progress_bar1" class="progressbar"></div>
+	<div id="progress_bar2" class="progressbar"></div>
+	<div id="progress_bar3" class="progressbar"></div>
+	<div class="makeCenter">
+		<div class="commonCls" >
+			<select value='{{selectedOptions}}'>
+			  {{#each Options}}
+				<option value='{{this}}'>{{name}}</option>
+			  {{/each}}
+			</select>
+		</div>
+		
+		<div class="commonCls" value='{{retriveButton}}'>
+			{{#each buttonData}}
+				<button  class='buttonCls' on-click='activate'>{{text}}</button>
+			{{/each }}
+		</div>
+		<div class='clear'></div>
+	</div>
+</div>
