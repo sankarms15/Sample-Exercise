@@ -1,7 +1,8 @@
 function progress_bar(container){
 	var bar = document.createElement('div');
+	this.bar= bar;
 	var text = document.createElement('div');
-		
+	this.text = text;
 	bar.style.width			= '0px';
 	bar.style.height		= '100%';
 	//bar.style.background	= '#eef';
@@ -59,9 +60,4 @@ function progress_bar(container){
 		text.appendChild(document.createTextNode(displayPrecentVal + '%'))
 	}
 	
-}
-
-
-function returnPer(per){
-	return (per === 25)
 }
